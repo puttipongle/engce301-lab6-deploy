@@ -4,7 +4,7 @@ export async function searchMovie(search_data) {
 
         console.log('search_data: ' + search_data);
 
-        const response = await fetch('https://192.168.90.123:3001/api/movie/search?search_text=' + search_data);
+        const response = await fetch('https://192.168.90.93:3001/api/movie/search?search_text=' + search_data);
 
         return await response.json(); //***
 
@@ -20,7 +20,7 @@ export async function getAllMovies() {
 
     try{
         //const response = await fetch('/api/users');
-         const response = await fetch('https://192.168.90.123:3001/api/movie/all');
+         const response = await fetch('https://192.168.90.93:3001/api/movie/all');
         //const response = await fetch('/api/movie/all');
         return await response.json();
     }catch(error) {
@@ -31,7 +31,7 @@ export async function getAllMovies() {
 
 //Insert Movie
 export async function createMovie(data) {
-    const response = await fetch(`https://192.168.90.123:3001/api/movie/insert`, {
+    const response = await fetch(`https://192.168.90.93:3001/api/movie/insert`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -51,7 +51,7 @@ export async function deleteMovie(delete_data) {
 
         console.log('delete_data: ' + delete_data);
 
-        const response = await fetch(`https://192.168.90.123:3001/api/movie/delete?delete_movie=${delete_data}`, {
+        const response = await fetch(`https://192.168.90.93:3001/api/movie/delete?delete_movie=${delete_data}`, {
             method: 'POST'
         });
 
